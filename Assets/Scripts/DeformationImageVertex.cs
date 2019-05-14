@@ -37,8 +37,8 @@ public class DeformationImageVertex : MonoBehaviour
 
     void Update()
     {
-        var lb = -deformationImage.rectTransform.sizeDelta * rectTransform.anchorMin;
-        var vt = (rectTransform.anchoredPosition - lb) / deformationImage.rectTransform.sizeDelta;
+        var lb = -deformationImage.rectTransform.rect.size * rectTransform.anchorMin;
+        var vt = (rectTransform.anchoredPosition - lb) / deformationImage.rectTransform.rect.size;
         vertex.uv0 = vt;
         vertex.position = transform.localPosition;
         vertex.color = deformationImage.GraphicColor;
